@@ -5,7 +5,7 @@
 ;; Author: Ranmocy Sheng <ranmocy@gmail.com>
 ;; Keywords: faces
 ;; URL: https://github.com/ranmocy/amelie-theme
-;; Version: 1.0
+;; Version: 1.1
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -22,9 +22,8 @@
 
 ;;; Commentary:
 ;;
-;; Inspired by slim-lang.org. Drop it into themes directory defined by
-;; `custom-theme-set-faces' and load it by `(load-theme 'Amelie)'.
-;; Don't forget to use the beautiful uppercase `A!' for `Amelie'!
+;; Inspired by slim-lang.org. Reference to zenburn-theme.
+;; Drop it into themes directory defined by `custom-theme-set-faces' and enjoy it.
 
 ;;; Requirements:
 ;;
@@ -45,34 +44,47 @@
       (amelie-grey-3 "#444")
       (amelie-red "#EA3E33")
       (amelie-orange+1 "#EF907E")
-      (amelie-orange "#E75521")
+      (amelie-orange "#E75544")
       (amelie-orange-1 "#AC4123")
       (amelie-yellow+1 "#FE8")
       (amelie-yellow "#FB0")
-      (amelie-yellow-1 "#998F2F")
-      (amelie-green "#7BF6B8")
-      (amelie-green-1 "#42BEAB")
-      (amelie-cyan "cyan")
-      (amelie-blue "blue")
-      (amelie-magenta "magenta"))
+      (amelie-yellow-1 "#B90")
+      (amelie-green+1 "#0FB")
+      (amelie-green "#50d42b")
+      (amelie-green-1 "#54ab54")
+      (amelie-cyan "#00eaff")
+      (amelie-blue "#01aafe")
+      (amelie-magenta "#99aFfF"))
   (custom-theme-set-faces
    'Amelie
    `(default ((t (:inherit nil :stipple nil :background ,amelie-bg :foreground ,amelie-fg :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :family "Monaco"))))
-   `(cursor ((t (:background ,amelie-fg :foreground ,amelie-bg))))
-   `(highlight ((((class color) (min-colors 89)) (:background ,amelie-bg-hi :foreground ,amelie-fg-hi))))
-   `(mode-line ((t (:foreground "#FFFFFF" :background "#323232"))))
-   `(region ((t (:background ,amelie-bg-hi :foreground ,amelie-fg-hi))))
 
+   ;; Editor
+   `(cursor ((t (:background ,amelie-fg :foreground ,amelie-bg))))
+   `(highlight ((t (:background ,amelie-bg-hi))))
+   `(region ((t (:background ,amelie-bg-hi :foreground ,amelie-fg-hi))))
+   `(header-line ((t (:foreground ,amelie-yellow
+                                  :box (:line-width -1 :style released-button)))))
+   ;; UI
+   `(menu ((t (:foreground ,amelie-fg :background ,amelie-bg))))
+   `(mode-line ((t (:foreground ,amelie-green-1
+                                :box (:line-width -1 :style pressed-button)))))
+   `(mode-line-inactive ((t (:foreground ,amelie-grey-2
+                                         :box (:line-width -1 :style released-button)))))
+   `(mode-line-buffer-id ((t (:foreground ,amelie-magenta :weight bold))))
+   `(minibuffer-prompt ((t (:foreground ,amelie-yellow))))
+
+   ;; font lock
    `(font-lock-comment-face ((t (:foreground ,amelie-grey-2))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,amelie-grey-3))))
-   `(font-lock-constant-face ((t (:foreground ,amelie-red))))
-   `(font-lock-builtin-face ((t (:foreground "#806116"))))
-   `(font-lock-function-name-face ((t (:foreground "#70FFBD"))))
-   `(font-lock-variable-name-face ((t (:foreground ,amelie-cyan))))
+   `(font-lock-constant-face ((t (:foreground ,amelie-cyan))))
+   `(font-lock-builtin-face ((t (:foreground ,amelie-cyan))))
+   `(font-lock-function-name-face ((t (:foreground ,amelie-blue))))
+   `(font-lock-variable-name-face ((t (:foreground ,amelie-orange))))
    `(font-lock-keyword-face ((t (:foreground ,amelie-yellow))))
    `(font-lock-string-face ((t (:foreground ,amelie-yellow+1))))
    `(font-lock-doc-string-face ((t (:foreground ,amelie-fg-hi))))
-   `(font-lock-type-face ((t (:foreground ,amelie-green))))
+   `(font-lock-type-face ((t (:foreground ,amelie-green+1))))
    ))
 
 (provide-theme 'Amelie)
