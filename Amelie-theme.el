@@ -4,7 +4,7 @@
 
 ;; Author: Ranmocy Sheng <ranmocy@gmail.com>
 ;; Keywords: faces
-;; URL: 
+;; URL: https://github.com/ranmocy/amelie-theme
 ;; Version: 1.0
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -23,7 +23,8 @@
 ;;; Commentary:
 ;;
 ;; Inspired by slim-lang.org. Drop it into themes directory defined by
-;; `custom-theme-set-faces' and enjoy it.
+;; `custom-theme-set-faces' and load it by `(load-theme 'Amelie)'.
+;; Don't forget to use the beautiful uppercase `A!' for `Amelie'!
 
 ;;; Requirements:
 ;;
