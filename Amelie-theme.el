@@ -57,7 +57,7 @@
       (amelie-magenta "#99aFfF"))
   (custom-theme-set-faces
    'Amelie
-   `(default ((t (:inherit nil :stipple nil :background ,amelie-bg :foreground ,amelie-fg :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :family "Monaco"))))
+   `(default ((t (:background ,amelie-bg :foreground ,amelie-fg))))
 
    ;; Editor
    `(cursor ((t (:background ,amelie-fg :foreground ,amelie-bg))))
@@ -68,8 +68,10 @@
    ;; UI
    `(menu ((t (:foreground ,amelie-fg :background ,amelie-bg))))
    `(mode-line ((t (:foreground ,amelie-green-1
+                                :background ,amelie-bg
                                 :box (:line-width -1 :style pressed-button)))))
    `(mode-line-inactive ((t (:foreground ,amelie-grey-2
+                                         :background ,amelie-bg
                                          :box (:line-width -1 :style released-button)))))
    `(mode-line-buffer-id ((t (:foreground ,amelie-magenta :weight bold))))
    `(minibuffer-prompt ((t (:foreground ,amelie-yellow))))
@@ -87,6 +89,15 @@
    `(font-lock-type-face ((t (:foreground ,amelie-green+1))))
    ))
 
+;;;###autoload
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
+
 (provide-theme 'Amelie)
+
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 
 ;;; Amelie-theme.el ends here
